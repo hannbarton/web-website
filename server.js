@@ -1,6 +1,9 @@
 const path = require('path');
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
+
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => res.send("HELLO FROM EXPRESS AND THE STARTING BOILERPLATE"));
 
