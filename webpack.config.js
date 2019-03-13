@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-  mode: isDev ? 'development' : 'production',
+  mode: 'development',
   entry: [
     '@babel/polyfill',
     './client/index.js'
@@ -29,6 +29,7 @@ module.exports = {
     resolve: {
         extensions: ['*', '.js', '.jsx']
     },
+    devtool: 'source-map',
     watchOptions: {
       ignored: /node_modules/
     },
@@ -38,10 +39,10 @@ module.exports = {
         publicPath: "/"
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ],
-    devServer: {
-        hot: true,
-        historyApiFallback: true
-    }
+      new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+      hot: false,
+      historyApiFallback: true
+  }
 };

@@ -6,8 +6,17 @@ body {
 p {
     color: white;
     font-family: monospace;
+    font-size: 1.25em;
 }
 
 .line1 {
-    color: #9CD9F0;
+    color: rgb(207, 169, 88)
+}
+
+.line2 {
+    color: #9CDCFE
+}
+
+.line3 {
+    color:rgb(197, 120, 90)
 }

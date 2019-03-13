@@ -23,7 +23,7 @@ class Browser extends React.Component {
 						<span class="cursor1">_</span>
 					</p>
 					<p className="line3">
-                        {`[ "I'm a web developer." ]`}
+                        {`"I'm a web developer." ]`}
 						<span class="cursor1">_</span>
 					</p>
 					<p className="line4">
