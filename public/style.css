@@ -2,3 +2,12 @@ body {
     background-color: #272727;
     color: black
 }
+
+p {
+    color: white;
+    font-family: monospace;
+}
+
+.line1 {
+    color: #9CD9F0;
+}

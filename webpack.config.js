@@ -29,6 +29,9 @@ module.exports = {
     resolve: {
         extensions: ['*', '.js', '.jsx']
     },
+    watchOptions: {
+      ignored: /node_modules/
+    },
     output: {
         path: path.join(__dirname, "public"),
         filename: "bundle.js",

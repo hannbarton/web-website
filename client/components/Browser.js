@@ -14,21 +14,21 @@ class Browser extends React.Component {
 					<div className="fake-buttons fake-zoom" />
 				</div>
 				<div className="fake-screen">
-					<p className="line1">
-                        {`[ "I'm a web developer."`}
+                <p className="line1">
+                        {`[ "Hello there!",`}
 						<span class="cursor1">_</span>
 					</p>
-					{/* <p className="line2">
-						&nbsp;&nbsp;&ldquo;I'm a web designer.&rdquo;,
-						<span class="cursor2">_</span>
+                    <p className="line2">
+                        {`"My name is Hannah.",`}
+						<span class="cursor1">_</span>
 					</p>
 					<p className="line3">
-						&nbsp;&nbsp;&ldquo;Let's work together!&rdquo;&nbsp;&#93;
-						<span class="cursor3">_</span>
+                        {`[ "I'm a web developer." ]`}
+						<span class="cursor1">_</span>
 					</p>
 					<p className="line4">
 						><span class="cursor4">_</span>
-					</p> */}
+					</p>
 				</div>
 			</div>
 		);
