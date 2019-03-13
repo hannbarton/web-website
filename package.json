@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "seed": "node script/seed.js",
-    "start": "nodemon --exec babel-node server.js",
+    "start": "nodemon --exec babel-node server/index.js",
     "build-client": "webpack",
     "build-client-watch": "webpack -w",
     "deploy": "script/deploy",
     "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' npm run start-server",
-    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
+    "start-server": "nodemon server/index.js -e html,js,scss --ignore public --ignore client",
     "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\" \"./client/**/*.spec.js\" \"./script/**/*.spec.js\" --require @babel/polyfill --require @babel/register"
   },
   "keywords": [],
@@ -35,6 +35,9 @@
     "express": "^4.16.4",
     "morgan": "^1.9.1",
     "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1"
   }
 }

@@ -5,7 +5,7 @@ const morgan = require('morgan');
 
 app.use(morgan('dev'));
 
-app.get('/', (req, res) => res.send("HELLO FROM EXPRESS AND THE STARTING BOILERPLATE"));
+// app.get('/', (req, res) => res.send("HELLO FROM EXPRESS AND THE STARTING BOILERPLATE"));
 
 app.use(express.static(path.join(__dirname, '..', 'public')))
 

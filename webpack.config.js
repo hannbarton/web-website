@@ -2,7 +2,10 @@ const path = require("path");
 const webpack = require('webpack');
 
 module.exports = {
-    entry: path.join(__dirname, "app.js"),
+  entry: [
+    '@babel/polyfill',
+    './client/index.js'
+  ],
     module: {
         rules: [
           {
