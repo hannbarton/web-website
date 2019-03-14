@@ -17,10 +17,10 @@
 }
 
 @keyframes type {
-    to {
-      width: 100%;
-    }
-  }
+	to {
+		width: 100%;
+	}
+}
 
 body {
 	background-color: #272727;
@@ -79,71 +79,68 @@ span {
 p {
 	color: white;
 	font-family: monospace;
-    font-size: 1.25em;
-    position: relative;
-    left: 50%;
-    margin-left: -10em;
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
+	font-size: 1.25em;
+	position: relative;
+	left: 50%;
+	margin-left: -10em;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 0;
 }
 
 .cursor1 {
-    animation: blink 1s 1s 2 forwards;
+	animation: blink 1s 1s 2 forwards;
 }
 
 .line1 {
-    color: rgb(207, 169, 88);
-    animation: type .5s 1s steps(20, end) forwards;
+	color: rgb(207, 169, 88);
+	animation: type 0.5s 1s steps(20, end) forwards;
 }
 
 .cursor2 {
-    animation: blink 1s 3s 2 forwards;
-  }
+	animation: blink 1s 3s 2 forwards;
+}
 
 .line2 {
-    color: #9cdcfe;
-    animation: type .5s 3s steps(20, end) forwards;
+	color: #9cdcfe;
+	animation: type 0.5s 3s steps(20, end) forwards;
 }
 
 .cursor3 {
-    animation: blink 1s 5s 2 forwards;
+	animation: blink 1s 5s 2 forwards;
 }
 
 .line3 {
-    color: rgb(197, 120, 90);
-    animation: type .5s 5s steps(20, end) forwards;
+	color: rgb(197, 120, 90);
+	animation: type 0.5s 5s steps(20, end) forwards;
 }
 
 .line4 {
-    animation: type .5s 7s steps(20, end) forwards;
-    display: flex;
+	animation: type 0.5s 7s steps(20, end) forwards;
+	display: flex;
 }
 
 .cursor4 {
-    animation: blink 1s 7s infinite;
-    display: flex
+	animation: blink 1s 7s infinite;
+	display: flex;
 }
 
 .hidden-form {
-    color: #151515;
-
+	color: #151515;
 }
 
-input[type=text] {
-    color:rgb(165, 44, 165);
-    border: 1px solid #151515;
-    background-color:#151515;
-    display: flex;
-    border: 1px solid #151515;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: .85em;
-    outline: none;
+input[type="text"] {
+	color: #1ba31b;
+	border: 1px solid #151515;
+	background-color: #151515;
+	display: flex;
+	box-sizing: border-box;
+	font-size: 1em;
+	outline: none;
+	font-family: monospace;
 }
 
-
-input[type=submit] {
-    background-color: #151515;
-  }
+input[type="submit"] {
+	background-color: #151515;
+}

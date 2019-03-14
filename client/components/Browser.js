@@ -1,4 +1,5 @@
 import React from "react";
+import Move from './Move'
 
 class Browser extends React.Component {
 	constructor() {
@@ -30,7 +31,7 @@ class Browser extends React.Component {
 					</p>
 					<p className="line4">
 						><span className="cursor4"></span>
-                        <form className='hidden-form'>
+                        <form autoComplete="off" className='hidden-form'>
 							<label>
 								<input type="text" name="input" />
 							</label>
