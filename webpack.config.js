@@ -39,10 +39,15 @@ module.exports = {
         publicPath: "/"
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoEmitOnErrorsPlugin()
   ],
   devServer: {
-      hot: false,
-      historyApiFallback: true
+      hot: true,
+      historyApiFallback: true,
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 3000
   }
 };

@@ -3,6 +3,51 @@ body {
     color: black
 }
 
+.fake-buttons {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    position: relative;
+    top: 6px;
+    left: 6px;
+    background-color: #ff3b47;
+    border-color: #d34249;
+    display: inline-block;
+  }
+
+  .fake-minimize {
+    left: 11px;
+    background-color: #ffc100;
+    border-color: #ceac45;
+  }
+
+  .fake-zoom {
+    left: 16px;
+    background-color: #00d742;
+    border-color: #42bd67;
+  }
+
+  .fake-menu {
+    width: 350px;
+    box-sizing: border-box;
+    height: 25px;
+    background-color: #bbb;
+    margin: 0 auto;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .fake-screen {
+    background-color: #151515;
+    box-sizing: border-box;
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
 p {
     color: white;
     font-family: monospace;
