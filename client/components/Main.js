@@ -1,13 +1,15 @@
 import React from 'react'
 import Move from './Move';
+import FolderMove from './FolderMove'
 
 class Main extends React.Component {
-	constructor() {
-		super();
-    }
+
     render() {
         return(
-            <Move/>
+            <div>
+                <FolderMove/>
+                <Move/>
+            </div>
         )
     }
 }

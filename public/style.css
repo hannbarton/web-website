@@ -82,8 +82,20 @@ span {
 	justify-content: center;
 }
 
-.browser {
-	margin: 1em;
+.folder {
+	width: 75px;
+	/* display: flex;
+	left: auto;
+	right: auto;
+	justify-content: center; */
+}
+
+
+
+.github-folder {
+	color: #fff;
+	font-size: 12pt;
+	/* text-align: center; */
 }
 
 .app-container {

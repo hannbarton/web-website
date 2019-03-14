@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
-import Browser from './Browser'
+import Folder from './Folder'
 
-class Move extends React.Component {
+class FolderMove extends React.Component {
 
     state = {
         isDragging: false,
@@ -78,28 +78,30 @@ class Move extends React.Component {
     )
   }
   render() {
+      console.log(this.state)
     return (
-        <div className='browser-container'>
-            <Movement
+        <div className='folder-container'>
+            <Move
                 onMouseDown={this.handleMouseDown}
                 x={this.state.translateX}
                 y={this.state.translateY}
                 isDragging={this.state.isDragging}
             >
-                <Browser/>
-            </Movement>
+                <Folder/>
+            </Move>
         </div>
     )
   }
 }
 
-const Movement = styled.div.attrs({
+const Move = styled.div.attrs({
     style: ({x, y}) => ({
       transform: `translate(${x}px, ${y}px)`
     })
 })`
-top: calc(50vh - 250px);
 position: fixed;
+top: 1em;
+right: 4em;
 cursor: grab;
 ${({isDragging}) =>
   isDragging &&
@@ -108,4 +110,4 @@ ${({isDragging}) =>
     cursor: grabbing;
   `};
 `
-export default Move
+export default FolderMove
