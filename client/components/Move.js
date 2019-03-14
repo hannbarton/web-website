@@ -98,7 +98,8 @@ const Movement = styled.div.attrs({
       transform: `translate(${x}px, ${y}px)`
     })
 })`
-padding: 0rem 1rem 0rem 1rem;
+top: calc(50vh - 250px);
+position: fixed;
 cursor: grab;
 ${({isDragging}) =>
   isDragging &&

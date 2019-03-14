@@ -1,9 +1,6 @@
 import React from "react";
 
 class Browser extends React.Component {
-	constructor() {
-		super();
-	}
 
 	render() {
 		return (

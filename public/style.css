@@ -28,7 +28,6 @@ body {
 
 span {
 	color: #fff;
-	font-weight: bold;
 }
 
 .fake-buttons {
@@ -53,7 +52,7 @@ span {
 }
 
 .fake-menu {
-	width: 500px;
+	width: 480px;
 	box-sizing: border-box;
 	height: 25px;
 	background-color: #bbb;
@@ -69,16 +68,17 @@ span {
 .fake-screen {
 	background-color: #151515;
 	box-sizing: border-box;
-	width: 500px;
+	width: 480px;
 	margin: auto;
-	padding: 50px;
+	padding: 50px 0 60px 0;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
 
 .browser-container {
 	display: flex;
-	/* align-items: center; */
+	align-items: center;
+	/* flex-direction: column; */
 	justify-content: center;
 }
 
