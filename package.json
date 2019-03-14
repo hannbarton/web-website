@@ -7,7 +7,7 @@
     "seed": "node script/seed.js",
     "start": "nodemon --exec babel-node server/index.js",
     "build-client": "webpack",
-    "build-client-watch": "webpack -w",
+    "build-client-watch": "webpack",
     "deploy": "script/deploy",
     "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' webpack-dev-server",
     "start-server": "nodemon server/index.js -e html,js,scss --ignore public --ignore client",
