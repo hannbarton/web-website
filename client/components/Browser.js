@@ -1,5 +1,4 @@
 import React from "react";
-import Move from './Move'
 
 class Browser extends React.Component {
 	constructor() {

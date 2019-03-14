@@ -1,25 +1,21 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
+import Browser from './Browser'
 
 class Move extends React.Component {
 
-        state = {
-            isDragging: false,
+    state = {
+        isDragging: false,
 
-            originalX: this.props.startx,
-            originalY: this.props.starty,
+        originalX: this.props.startx,
+        originalY: this.props.starty,
 
-            translateX: this.props.startx,
-            translateY: this.props.starty,
+        translateX: this.props.startx,
+        translateY: this.props.starty,
 
-            lastTranslateX: this.props.startx,
-            lastTranslateY: this.props.starty,
-        }
-
-        //   this.handleMouseDown = this.handleMouseDown.bind(this)
-        //   this.handleMouseMove = this.handleMouseMove.bind(this)
-        //   this.handleMouseUp = this.handleMouseUp.bind(this)
-
+        lastTranslateX: this.props.startx,
+        lastTranslateY: this.props.starty,
+    }
 
   componentWillUnmount() {
     window.removeEventListener('mousemove', this.handleMouseMove)
@@ -84,6 +80,7 @@ class Move extends React.Component {
   render() {
     return (
         <div>
+            <Browser/>
             <Container/>
         </div>
     )
@@ -98,12 +95,13 @@ const Container = styled.div.attrs({
   padding: 0rem 1rem 0rem 1rem;
   display: inline-block;
   position: absolute;
+  width: 100px;
+  height: 100px;
   ${({isDragging}) =>
     isDragging &&
     css`
       opacity: 0.8;
       cursor: grabbing;
-      color: green;
     `};
 `
 

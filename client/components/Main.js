@@ -1,5 +1,6 @@
 import React from 'react'
 import Browser from './Browser'
+import Move from './Move';
 
 class Main extends React.Component {
 	constructor() {
@@ -7,7 +8,8 @@ class Main extends React.Component {
     }
     render() {
         return(
-            <Browser/>
+            // <Browser/>
+            <Move/>
         )
     }
 }
