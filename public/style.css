@@ -32,28 +32,24 @@ span {
 }
 
 .fake-buttons {
-	height: 10px;
-	width: 10px;
+	height: 12px;
+	width: 12px;
 	border-radius: 50%;
-	border: 1px solid #000;
 	position: relative;
 	top: 6px;
 	left: 6px;
-	background-color: #ff3b47;
-	border-color: #d34249;
+	background-color: #ec646d;
 	display: inline-block;
 }
 
 .fake-minimize {
 	left: 11px;
-	background-color: #ffc100;
-	border-color: #ceac45;
+	background-color: #e4c874;
 }
 
 .fake-zoom {
 	left: 16px;
-	background-color: #00d742;
-	border-color: #42bd67;
+	background-color: #62bb7d;
 }
 
 .fake-menu {
@@ -122,8 +118,32 @@ p {
 
 .line4 {
     animation: type .5s 7s steps(20, end) forwards;
+    display: flex;
 }
 
 .cursor4 {
-	animation: blink 1s 7s infinite;
+    animation: blink 1s 7s infinite;
+    display: flex
 }
+
+.hidden-form {
+    color: #151515;
+
+}
+
+input[type=text] {
+    color:rgb(165, 44, 165);
+    border: 1px solid #151515;
+    background-color:#151515;
+    display: flex;
+    border: 1px solid #151515;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: .85em;
+    outline: none;
+}
+
+
+input[type=submit] {
+    background-color: #151515;
+  }
