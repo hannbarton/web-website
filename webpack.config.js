@@ -1,9 +1,9 @@
 const path = require("path");
 const webpack = require('webpack');
-const isDev = process.env.NODE_ENV === 'development';
+const env = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 module.exports = {
-  mode: 'development',
+  mode: env,
   entry: [
     '@babel/polyfill',
     './client/index.js'
@@ -36,11 +36,13 @@ module.exports = {
     output: {
         path: path.join(__dirname, "public"),
         filename: "bundle.js",
-        publicPath: "/"
     },
     plugins: [
       new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.HotModuleReplacementPlugin(),
+      new webpack.HotModuleReplacementPlugin({
+        // exclude hot-update files
+        test: /^(?!.*(hot)).*/,
+      }),
       new webpack.NoEmitOnErrorsPlugin()
   ],
   devServer: {

@@ -16,7 +16,7 @@ class Browser extends React.Component {
 				<div className="fake-screen">
                 <p className="line1">
                         {`[ "Hello there!",`}
-						<span class="cursor1">_</span>
+						<span className="cursor1">_</span>
 					</p>
                     <p className="line2">
                         {`"My name is Hannah.",`}
