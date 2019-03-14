@@ -7,14 +7,14 @@ class Move extends React.Component {
     state = {
         isDragging: false,
 
-        originalX: this.props.startx,
-        originalY: this.props.starty,
+        originalX: 0,
+        originalY: 0,
 
-        translateX: this.props.startx,
-        translateY: this.props.starty,
+        translateX: 0,
+        translateY: 0,
 
-        lastTranslateX: this.props.startx,
-        lastTranslateY: this.props.starty,
+        lastTranslateX: 0,
+        lastTranslateY: 0
     }
 
   componentWillUnmount() {
@@ -79,30 +79,33 @@ class Move extends React.Component {
   }
   render() {
     return (
-        <div>
+        <div className='browser-container'>
+            <Movement
+                onMouseDown={this.handleMouseDown}
+                x={this.state.translateX}
+                y={this.state.translateY}
+                isDragging={this.state.isDragging}
+            >
             <Browser/>
-            <Container/>
+            </Movement>
         </div>
     )
   }
 }
 
-const Container = styled.div.attrs({
-  style: ({x, y}) => ({
-    transform: `translate(${x}px, ${y}px)`
-  })
+const Movement = styled.div.attrs({
+    style: ({x, y}) => ({
+      transform: `translate(${x}px, ${y}px)`
+    })
 })`
-  padding: 0rem 1rem 0rem 1rem;
-  display: inline-block;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  ${({isDragging}) =>
-    isDragging &&
-    css`
-      opacity: 0.8;
-      cursor: grabbing;
-    `};
+padding: 0rem 1rem 0rem 1rem;
+cursor: grab;
+${({isDragging}) =>
+  isDragging &&
+  css`
+    opacity: 0.8;
+    cursor: grabbing;
+  `};
 `
 
 export default Move

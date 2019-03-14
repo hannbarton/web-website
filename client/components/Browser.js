@@ -8,6 +8,7 @@ class Browser extends React.Component {
 	render() {
 		return (
 			<div className="browser">
+
 				<div className="fake-menu">
 					<div className="fake-buttons fake-close" />
 					<div className="fake-buttons fake-minimize" />
@@ -28,7 +29,7 @@ class Browser extends React.Component {
 						{`"I'm a full stack developer." ]`}
 						<span className="cursor3">_</span>
 					</p>
-					<p className="line4">
+					<div className="line4">
 						><span className="cursor4"></span>
                         <form autoComplete="off" className='hidden-form'>
 							<label>
@@ -37,7 +38,7 @@ class Browser extends React.Component {
 							{/* <button type="submit" value="Submit" /> */}
 						</form>
 
-					</p>
+					</div>
 				</div>
 			</div>
 		);

@@ -57,7 +57,7 @@ span {
 	box-sizing: border-box;
 	height: 25px;
 	background-color: #bbb;
-	margin: 0 auto;
+	margin: auto;
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
 }
@@ -70,10 +70,26 @@ span {
 	background-color: #151515;
 	box-sizing: border-box;
 	width: 500px;
-	margin: 0 auto;
+	margin: auto;
 	padding: 50px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+}
+
+.browser-container {
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+}
+
+.browser {
+	margin: 1em;
+}
+
+.app-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 p {
@@ -119,6 +135,16 @@ p {
 .line4 {
 	animation: type 0.5s 7s steps(20, end) forwards;
 	display: flex;
+	color: white;
+	font-family: monospace;
+	font-size: 1.25em;
+	position: relative;
+	left: 50%;
+	margin-left: -10em;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 0;
 }
 
 .cursor4 {

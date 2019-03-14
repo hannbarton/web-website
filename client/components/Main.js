@@ -1,5 +1,4 @@
 import React from 'react'
-import Browser from './Browser'
 import Move from './Move';
 
 class Main extends React.Component {
@@ -8,8 +7,8 @@ class Main extends React.Component {
     }
     render() {
         return(
-            // <Browser/>
             <Move/>
+
         )
     }
 }
