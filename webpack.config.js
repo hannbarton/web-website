@@ -1,13 +1,15 @@
 const path = require("path");
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const env = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 module.exports = {
   mode: env,
   entry: [
-    '@babel/polyfill',
+    '@babel/polyfill', // enables async-await
     './client/index.js'
   ],
+  target:'web',
     module: {
         rules: [
           {
@@ -38,18 +40,11 @@ module.exports = {
         filename: "bundle.js",
     },
     plugins: [
-      new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.HotModuleReplacementPlugin({
-        // exclude hot-update files
-        test: /^(?!.*(hot)).*/,
-      }),
-      new webpack.NoEmitOnErrorsPlugin()
+      new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-      hot: true,
-      historyApiFallback: true,
-      contentBase: path.join(__dirname, 'dist'),
-      compress: true,
-      port: 3000
-  }
+    contentBase: path.join(__dirname, 'public'),
+    compress: true,
+    port: 3000
+  },
 };

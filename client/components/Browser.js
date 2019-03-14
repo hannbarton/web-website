@@ -19,11 +19,11 @@ class Browser extends React.Component {
 						<span className="cursor1">_</span>
 					</p>
                     <p className="line2">
-                        {`"My name is Hannah.",`}
+                    {`__"My name is Hannah.",`}
 						<span className="cursor1">_</span>
 					</p>
 					<p className="line3">
-                        {`"I'm a full stack developer." ]`}
+                    {`__"I'm a full stack developer." ]`}
 						<span className="cursor1">_</span>
 					</p>
 					<p className="line4">

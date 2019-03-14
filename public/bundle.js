@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6251e59a212660b98009";
+/******/ 	var hotCurrentHash = "7559fb5c1917499bd91d";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -781,7 +781,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -879,11 +879,11 @@ function (_React$Component) {
         className: "cursor1"
       }, "_")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "line2"
-      }, "\"My name is Hannah.\",", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "__\"My name is Hannah.\",", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "cursor1"
       }, "_")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "line3"
-      }, "\"I'm a full stack developer.\" ]", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "__\"I'm a full stack developer.\" ]", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "cursor1"
       }, "_")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "line4"

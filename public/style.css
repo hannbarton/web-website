@@ -33,7 +33,7 @@ span {
 }
 
 .fake-menu {
-	width: 370px;
+	width: 400px;
 	box-sizing: border-box;
 	height: 25px;
 	background-color: #bbb;
@@ -45,7 +45,7 @@ span {
 .fake-screen {
 	background-color: #151515;
 	box-sizing: border-box;
-	width: 370px;
+	width: 400px;
 	margin: 0 auto;
 	padding: 20px;
 	border-bottom-left-radius: 5px;
@@ -63,7 +63,8 @@ p {
 }
 
 .line2 {
-	color: #9cdcfe;
+    color: #9cdcfe;
+    margin-right: 1em;
 }
 
 .line3 {
