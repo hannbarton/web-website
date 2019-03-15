@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d78eec60913a9ffbd83b";
+/******/ 	var hotCurrentHash = "c86e23df9788e3cd1952";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -929,6 +929,7 @@ var Folder = function Folder() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "folder-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    draggable: "false",
     className: "folder",
     src: "./images/folder.png"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1096,12 +1097,14 @@ function (_React$Component) {
       console.log(this.state);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "folder-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Move, {
-        onMouseDown: this.handleMouseDown,
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Move // onMouseDown={this.handleMouseDown}
+      , {
         x: this.state.translateX,
         y: this.state.translateY,
         isDragging: this.state.isDragging,
-        src: "./images/folder.png"
+        onClick: function onClick() {
+          return window.open('https://github.com/hannbarton');
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
     }
   }]);

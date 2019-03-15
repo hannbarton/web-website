@@ -86,6 +86,7 @@ class FolderMove extends React.Component {
                 x={this.state.translateX}
                 y={this.state.translateY}
                 isDragging={this.state.isDragging}
+                // onClick={() => window.open('https://github.com/hannbarton')}
             >
                 <Folder/>
             </Move>
