@@ -179,3 +179,28 @@ input[type="text"] {
 input[type="submit"] {
 	background-color: #151515;
 }
+
+.bar {
+	width: calc(100vw - 16vw);
+	height: 70px;
+	opacity: .7;
+	background-color: rgb(94, 94, 94);
+	position: fixed;
+    bottom: 0;
+	left: 0;
+	margin: 0 8vw;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.github-program {
+	width: 60px;
+	margin: 25px;
+}
+
+.github-program:hover {
+	width: 70px;
+	margin: 25px;
+}

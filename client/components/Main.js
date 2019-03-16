@@ -1,5 +1,6 @@
 import React from 'react'
 import Move from './Move';
+import Bar from './Bar'
 import FolderMove from './FolderMove'
 
 class Main extends React.Component {
@@ -9,6 +10,7 @@ class Main extends React.Component {
             <div>
                 <FolderMove/>
                 <Move/>
+                <Bar/>
             </div>
         )
     }

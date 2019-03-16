@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c86e23df9788e3cd1952";
+/******/ 	var hotCurrentHash = "716f61fc0e280bf11cc2";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -818,6 +818,32 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./client/components/Bar.js":
+/*!**********************************!*\
+  !*** ./client/components/Bar.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var Bar = function Bar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bar"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "github-program",
+    src: "./images/github.png"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Bar);
+
+/***/ }),
+
 /***/ "./client/components/Browser.js":
 /*!**************************************!*\
   !*** ./client/components/Browser.js ***!
@@ -934,7 +960,7 @@ var Folder = function Folder() {
     src: "./images/folder.png"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "github-folder"
-  }, "Github"));
+  }, "Project-1"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Folder);
@@ -1097,14 +1123,12 @@ function (_React$Component) {
       console.log(this.state);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "folder-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Move // onMouseDown={this.handleMouseDown}
-      , {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Move, {
+        onMouseDown: this.handleMouseDown,
         x: this.state.translateX,
         y: this.state.translateY,
-        isDragging: this.state.isDragging,
-        onClick: function onClick() {
-          return window.open('https://github.com/hannbarton');
-        }
+        isDragging: this.state.isDragging // onClick={() => window.open('https://github.com/hannbarton')}
+
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Folder__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
     }
   }]);
@@ -1140,7 +1164,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Move__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Move */ "./client/components/Move.js");
-/* harmony import */ var _FolderMove__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FolderMove */ "./client/components/FolderMove.js");
+/* harmony import */ var _Bar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Bar */ "./client/components/Bar.js");
+/* harmony import */ var _FolderMove__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./FolderMove */ "./client/components/FolderMove.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1163,6 +1188,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Main =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1177,7 +1203,7 @@ function (_React$Component) {
   _createClass(Main, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FolderMove__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Move__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FolderMove__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Move__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Bar__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
