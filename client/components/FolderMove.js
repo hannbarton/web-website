@@ -77,12 +77,13 @@ class FolderMove extends React.Component {
       }
     )
   }
+
   render() {
       console.log(this.state)
     return (
         <div className='folder-container'>
             <Move
-                onMouseDown={this.handleMouseDown}
+                // onMouseDown={this.handleMouseDown}
                 x={this.state.translateX}
                 y={this.state.translateY}
                 isDragging={this.state.isDragging}
@@ -103,7 +104,6 @@ const Move = styled.div.attrs({
 position: fixed;
 top: 1em;
 right: 4em;
-cursor: grab;
 ${({isDragging}) =>
   isDragging &&
   css`
