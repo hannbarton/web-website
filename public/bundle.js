@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b9b955b57323426f07f4";
+/******/ 	var hotCurrentHash = "eaf0eefb4d53d475fe5f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -991,7 +991,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\nposition: fixed;\ntop: 1em;\nright: 4em;\ncursor: grab;\n", ";\n"]);
+  var data = _taggedTemplateLiteral(["\nposition: fixed;\ntop: 1em;\nright: 4em;\n", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1185,8 +1185,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -1199,22 +1197,15 @@ function (_React$Component) {
   _inherits(Main, _React$Component);
 
   function Main() {
-    var _getPrototypeOf2;
-
     var _this;
 
     _classCallCheck(this, Main);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Main)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Main).call(this));
+    _this.state = {
       Project1: false
-    });
-
+    };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1223,29 +1214,16 @@ function (_React$Component) {
     value: function handleClick(e) {
       e.preventDefault();
       this.setState({
-        Project1: true
+        Project1: !this.state.Project1
       });
-
-      this._renderSubComp();
-    }
-  }, {
-    key: "_renderSubComp",
-    value: function _renderSubComp() {
-      if (this.state.Project1) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Project1__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-      }
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       console.log(this.state);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FolderMove__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        onClick: function onClick(e) {
-          return _this2.handleClick.bind(_this2);
-        }
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Move__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Bar__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.handleClick
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FolderMove__WEBPACK_IMPORTED_MODULE_3__["default"], null)), this.state.Project1 && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Project1__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Move__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
 
@@ -1460,9 +1438,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1476,53 +1454,54 @@ function (_React$Component) {
   _inherits(Project1, _React$Component);
 
   function Project1() {
+    var _this;
+
     _classCallCheck(this, Project1);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Project1).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Project1).call(this));
+    _this.state = {
+      Project1: false
+    };
+    _this.closeHandler = _this.closeHandler.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(Project1, [{
+    key: "closeHandler",
+    value: function closeHandler(e) {
+      e.preventDefault();
+      this.setState({
+        Project1: !this.state.Project1
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "browser"
+        className: "project-browser"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fake-menu"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.closeHandler,
         className: "fake-buttons fake-close"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fake-buttons fake-minimize"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fake-buttons fake-zoom"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "fake-screen"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "line1"
-      }, "[ \"Hello there!\",", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "cursor1"
-      }, "_")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "line2"
+        className: "project-screen"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-twitter"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-twitter-text"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "blank"
-      }, "__"), "\"This is my project 1\",", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "cursor2"
-      }, "_")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "line3"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "blank"
-      }, "__"), "\"I'm a full stack developer.\" ]", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "cursor3"
-      }, "_")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "line4"
-      }, ">", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "cursor4"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        autoComplete: "off",
-        className: "hidden-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        name: "input"
-      }))))));
+        className: "dot"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "twitter-line"
+      }, "An application that allows users to create", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "a visual poem from #trendinghashtags")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "found-poetry-pic",
+        src: "./images/found.png"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null))));
     }
   }]);
 

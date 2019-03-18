@@ -30,7 +30,7 @@ class Main extends React.Component {
                 </div>
                     {this.state.Project1 && <Project1 />}
                 <Move/>
-                <Bar/>
+                {/* <Bar/> */}
             </div>
         )
     }

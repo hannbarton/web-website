@@ -18,28 +18,32 @@ class Project1 extends React.Component {
 
 	render() {
 		return (
-			<div className="browser">
+			<div className="project-browser">
 
 				<div className="fake-menu">
 					<div onClick={this.closeHandler} className="fake-buttons fake-close" />
 					<div className="fake-buttons fake-minimize" />
 					<div className="fake-buttons fake-zoom" />
 				</div>
-				<div className="fake-screen">
-					<p className="line1">
-						{`[ An application that allows users`}
-						<span className="cursor1">_</span>
-					</p>
-					<p className="line2">
-						<span className="blank">{"__"}</span>
-						{`to make a visual poem from `}
-						<span className="cursor2">_</span>
-					</p>
-					<p className="line3">
-						<span className="blank">{"__"}</span>
-						{`currently #trendinghashtags ]`}
-						<span className="cursor3">_</span>
-					</p>
+				<div className="project-screen">
+					<div className='inner-twitter'>
+						<span className='inner-twitter-text'>
+							<img className='dot' src='./images/twitter.png'></img>
+							<span className="twitter-bold">
+								{`Hannah @hannbarton`}
+							</span>
+							<br/>
+							<span className="twitter-line">
+								{`An application that allows users to create a`}
+							</span>
+							<br/>
+							<span className="twitter">
+								{`visual poem from #trendinghashtags`}
+							</span>
+						</span>
+						<img className='found-poetry-pic' src='./images/found.png'></img>
+						<br/>
+					</div>
 				</div>
 			</div>
 		);

@@ -16,6 +16,11 @@
 	}
 }
 
+@font-face {
+	font-family: "Helvetica-neue";
+	src: url('./HelveticaNeue-Roman.otf');
+}
+
 @keyframes type {
 	to {
 		width: 100%;
@@ -203,4 +208,67 @@ input[type="submit"] {
 .github-program:hover {
 	width: 70px;
 	margin: 25px;
+}
+
+.found-poetry-pic {
+	display: block;
+	width: 205px;
+	border-radius: 10px;
+	margin-left: 50px;
+	margin-top: 10px;
+}
+
+.project-screen {
+	background-color: #d0d9dd;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.project-browser {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 1;
+}
+
+.inner-twitter {
+	background-color: white;
+	width: 300px;
+	margin-left: 85px;
+	padding-top: 15px;
+	line-height: 80%;
+}
+
+.twitter-line {
+	color: black;
+	font-size: 8pt;
+	font-family: "Helvetica-neue";
+	font-weight: normal;
+	padding-left: 50px;
+}
+
+.twitter{
+	color: black;
+	font-size: 8pt;
+	font-family: "Helvetica-neue";
+	font-weight: normal;
+	padding-left: 50px;
+}
+
+.twitter-bold {
+	font-weight: bold;
+	font-size: 8pt;
+	color: black;
+	padding-left: 50px;
+}
+
+.dot {
+	width: 28px;
+	margin-left: 8px;
+	margin-top: 5px;
+	position: absolute;
+  }
+
+.inner-twitter-text {
+	/* display: inline; */
 }
