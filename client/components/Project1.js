@@ -43,6 +43,7 @@ class Project1 extends React.Component {
 						</span>
 						<img className='found-poetry-pic' src='./images/found.png'></img>
 						<br/>
+						<img className='twitter-footer' src='./images/footer.png'></img>
 					</div>
 				</div>
 			</div>
