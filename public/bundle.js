@@ -165,7 +165,7 @@ var Browser = function Browser() {
     className: "fake-screen"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "line1"
-  }, "[ \"Hello me!\",", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+  }, "[ \"Hello there!\",", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "cursor1"
   }, "_")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "line2"
@@ -568,149 +568,101 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
-var Move =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Move, _React$Component);
+function Move() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isDragging = _useState2[0],
+      setIsDragging = _useState2[1];
 
-  function Move() {
-    var _getPrototypeOf2;
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      originalX = _useState4[0],
+      setOriginalX = _useState4[1];
 
-    var _this;
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      originalY = _useState6[0],
+      setOriginalY = _useState6[1];
 
-    _classCallCheck(this, Move);
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState8 = _slicedToArray(_useState7, 2),
+      translateX = _useState8[0],
+      setTranslateX = _useState8[1];
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState10 = _slicedToArray(_useState9, 2),
+      translateY = _useState10[0],
+      setTranslateY = _useState10[1];
+
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      lastTranslateX = _useState12[0],
+      setLastTranslateX = _useState12[1];
+
+  var _useState13 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState14 = _slicedToArray(_useState13, 2),
+      lastTranslateY = _useState14[0],
+      setLastTranslateY = _useState14[1];
+
+  var handleMouseDown = function handleMouseDown(event) {
+    setOriginalX(event.clientX);
+    setOriginalY(event.clientY);
+    setIsDragging(true);
+  };
+
+  var handleMouseMove = function handleMouseMove(event) {
+    if (!isDragging) {
+      return;
+    } else {
+      setTranslateX(event.clientX - originalX + lastTranslateX);
+      setTranslateY(event.clientY - originalY + lastTranslateY);
     }
+  };
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Move)).call.apply(_getPrototypeOf2, [this].concat(args)));
+  var handleMouseUp = function handleMouseUp(event) {
+    window.removeEventListener('mousemove', handleMouseMove);
+    window.removeEventListener('mouseup', handleMouseUp);
+    setLastTranslateX(translateX);
+    setLastTranslateY(translateY);
+    setIsDragging(false);
+  };
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      isDragging: false,
-      originalX: 0,
-      originalY: 0,
-      translateX: 0,
-      translateY: 0,
-      lastTranslateX: 0,
-      lastTranslateY: 0
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "handleMouseDown", function (_ref) {
-      var clientX = _ref.clientX,
-          clientY = _ref.clientY;
-      window.addEventListener('mousemove', _this.handleMouseMove);
-      window.addEventListener('mouseup', _this.handleMouseUp);
-
-      _this.setState({
-        originalX: clientX,
-        originalY: clientY,
-        isDragging: true
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "handleMouseMove", function (_ref2) {
-      var clientX = _ref2.clientX,
-          clientY = _ref2.clientY;
-      var isDragging = _this.state.isDragging;
-      var onDrag = _this.props.onDrag;
-
-      if (!isDragging) {
-        return;
-      }
-
-      _this.setState(function (prevState) {
-        return {
-          translateX: clientX - prevState.originalX + prevState.lastTranslateX,
-          translateY: clientY - prevState.originalY + prevState.lastTranslateY
-        };
-      }, function () {
-        if (onDrag) {
-          onDrag({
-            translateX: _this.state.translateX,
-            translateY: _this.state.translateY
-          });
-        }
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "handleMouseUp", function (event, target) {
-      event.preventDefault();
-      window.removeEventListener('mousemove', _this.handleMouseMove);
-      window.removeEventListener('mouseup', _this.handleMouseUp);
-
-      _this.setState({
-        lastTranslateX: _this.state.translateX,
-        lastTranslateY: _this.state.translateY,
-        isDragging: false
-      }, function () {
-        if (_this.props.onDragEnd) {
-          _this.props.onDragEnd();
-        }
-      });
-    });
-
-    return _this;
-  }
-
-  _createClass(Move, [{
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      window.removeEventListener('mousemove', this.handleMouseMove);
-      window.removeEventListener('mouseup', this.handleMouseUp);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "browser-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Movement, {
-        onMouseDown: this.handleMouseDown,
-        x: this.state.translateX,
-        y: this.state.translateY,
-        isDragging: this.state.isDragging
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Browser__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
-    }
-  }]);
-
-  return Move;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+  });
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "browser-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Movement, {
+    x: translateX,
+    y: translateY
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Browser__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+}
 
 var Movement = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.attrs({
-  style: function style(_ref3) {
-    var x = _ref3.x,
-        y = _ref3.y;
+  style: function style(_ref) {
+    var x = _ref.x,
+        y = _ref.y;
     return {
       transform: "translate(".concat(x, "px, ").concat(y, "px)")
     };
   }
-})(_templateObject(), function (_ref4) {
-  var isDragging = _ref4.isDragging;
-  return isDragging && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2());
+})(_templateObject(), function (_ref2) {
+  var setIsDragging = _ref2.setIsDragging;
+  return setIsDragging && Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["css"])(_templateObject2());
 });
 /* harmony default export */ __webpack_exports__["default"] = (Move);
 

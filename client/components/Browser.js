@@ -10,7 +10,7 @@ const Browser = () => {
 			</div>
 			<div className="fake-screen">
 				<p className="line1">
-					{`[ "Hello me!",`}
+					{`[ "Hello there!",`}
 					<span className="cursor1">_</span>
 				</p>
 				<p className="line2">

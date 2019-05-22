@@ -1,96 +1,61 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import styled, {css} from 'styled-components'
 import Browser from './Browser'
 
-class Move extends React.Component {
+function Move() {
 
-    state = {
-        isDragging: false,
+  const [isDragging, setIsDragging] = useState(false);
+  const [originalX, setOriginalX] = useState(0);
+  const [originalY, setOriginalY] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
+  const [translateY, setTranslateY] = useState(0);
+  const [lastTranslateX, setLastTranslateX] = useState(0);
+  const [lastTranslateY, setLastTranslateY] = useState(0);
 
-        originalX: 0,
-        originalY: 0,
+  const handleMouseDown = (event) => {
+      setOriginalX(event.clientX);
+      setOriginalY(event.clientY)
 
-        translateX: 0,
-        translateY: 0,
-
-        lastTranslateX: 0,
-        lastTranslateY: 0
-    }
-
-  componentWillUnmount() {
-    window.removeEventListener('mousemove', this.handleMouseMove)
-    window.removeEventListener('mouseup', this.handleMouseUp)
+      setIsDragging(true)
   }
 
-  handleMouseDown = ({clientX, clientY}) => {
-    window.addEventListener('mousemove', this.handleMouseMove)
-    window.addEventListener('mouseup', this.handleMouseUp)
-
-    this.setState({
-      originalX: clientX,
-      originalY: clientY,
-
-      isDragging: true,
-    })
-  }
-
-  handleMouseMove = ({clientX, clientY}) => {
-    const {isDragging} = this.state
-    const {onDrag} = this.props
-
+  const handleMouseMove = (event) => {
     if (!isDragging) {
       return
     }
-    this.setState(
-      prevState => ({
-        translateX: clientX - prevState.originalX + prevState.lastTranslateX,
-        translateY: clientY - prevState.originalY + prevState.lastTranslateY
-      }),
-      () => {
-        if (onDrag) {
-          onDrag({
-            translateX: this.state.translateX,
-            translateY: this.state.translateY
-          })
-        }
-      }
-    )
+    else {
+      setTranslateX(event.clientX - originalX + lastTranslateX);
+      setTranslateY(event.clientY - originalY + lastTranslateY);
+    }
   }
 
-  handleMouseUp = (event, target) => {
+  const handleMouseUp = (event) => {
 
-    event.preventDefault()
+    window.removeEventListener('mousemove', handleMouseMove)
+    window.removeEventListener('mouseup', handleMouseUp)
 
-    window.removeEventListener('mousemove', this.handleMouseMove)
-    window.removeEventListener('mouseup', this.handleMouseUp)
-
-    this.setState(
-      {
-        lastTranslateX: this.state.translateX,
-        lastTranslateY: this.state.translateY,
-        isDragging: false
-      },
-      () => {
-        if (this.props.onDragEnd) {
-          this.props.onDragEnd()
-        }
-      }
-    )
+    setLastTranslateX(translateX);
+    setLastTranslateY(translateY);
+    setIsDragging(false)
   }
-  render() {
-    return (
-        <div className='browser-container'>
-            <Movement
-                onMouseDown={this.handleMouseDown}
-                x={this.state.translateX}
-                y={this.state.translateY}
-                isDragging={this.state.isDragging}
-            >
-                <Browser/>
-            </Movement>
-        </div>
-    )
-  }
+
+  useEffect(() => {
+    window.addEventListener('mousedown', handleMouseDown)
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mouseup', handleMouseUp)
+    });
+
+  return (
+    <div className='browser-container'>
+        <Movement
+            x={translateX}
+            y={translateY}
+        >
+            <Browser/>
+        </Movement>
+    </div>
+  )
+
 }
 
 const Movement = styled.div.attrs({
@@ -101,8 +66,8 @@ const Movement = styled.div.attrs({
 top: calc(50vh - 250px);
 position: fixed;
 cursor: grab;
-${({isDragging}) =>
-  isDragging &&
+${({setIsDragging}) =>
+  setIsDragging &&
   css`
     opacity: 0.8;
     cursor: grabbing;
