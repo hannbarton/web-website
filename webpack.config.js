@@ -1,23 +1,21 @@
 const path = require("path");
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const env = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 module.exports = {
   mode: env,
-  entry: [
-    '@babel/polyfill', // enables async-await
-    './client/index.js'
-  ],
+  entry: './client/index.js',
+  output: {
+      path: path.resolve(__dirname, "public"),
+      filename: "bundle.js",
+  },
   target:'web',
     module: {
         rules: [
           {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            use: {
-              loader: "babel-loader"
-            }
+            loader: "babel-loader",
           },
           {
             test: /\.css$/,
@@ -25,22 +23,19 @@ module.exports = {
               'style-loader',
               'css-loader',
             ]
-          }
+          },
         ]
     },
     resolve: {
         extensions: ['*', '.js', '.jsx']
     },
     devtool: 'source-map',
+    watch: true,
     watchOptions: {
       ignored: /node_modules/
     },
-    output: {
-        path: path.join(__dirname, "public"),
-        filename: "bundle.js",
-    },
     plugins: [
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.NamedModulesPlugin(),
   ],
   devServer: {
     contentBase: path.join(__dirname, 'public'),

@@ -35,6 +35,10 @@ span {
 	color: #fff;
 }
 
+.button-count {
+	color: pink;
+}
+
 .fake-buttons {
 	height: 12px;
 	width: 12px;

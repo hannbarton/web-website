@@ -3,6 +3,7 @@ import Move from './Move';
 import Bar from './Bar'
 import FolderMove from './FolderMove'
 import Project1 from './Project1'
+import Hook from './Hook';
 
 class Main extends React.Component {
     constructor() {
@@ -14,17 +15,16 @@ class Main extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
 
-
     handleClick(e){
         e.preventDefault()
         this.setState({Project1: !this.state.Project1});
     }
 
-
     render() {
         console.log(this.state)
         return(
             <div>
+                <Hook/>
                 <div onClick={this.handleClick}>
                     <FolderMove/>
                 </div>
